@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileValidator", "FileValidator\FileValidator.csproj", "{A9F22359-E46B-4693-908C-1444855B7EBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileValidator", "FileValidator\FileValidator.csproj", "{A9F22359-E46B-4693-908C-1444855B7EBC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test-Layer", "Test-Layer", "{C1822CA3-2845-4D38-9BE5-FD68ADC4AE95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{6CD2ABA8-6EF4-424E-A90C-BAC10F8DB8D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{6CD2ABA8-6EF4-424E-A90C-BAC10F8DB8D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileValidatorTest", "FileValidatorTest\FileValidatorTest.csproj", "{B033B75A-F452-4680-A0A2-B1DB42D1C0DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,9 +25,16 @@ Global
 		{6CD2ABA8-6EF4-424E-A90C-BAC10F8DB8D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CD2ABA8-6EF4-424E-A90C-BAC10F8DB8D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CD2ABA8-6EF4-424E-A90C-BAC10F8DB8D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B033B75A-F452-4680-A0A2-B1DB42D1C0DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B033B75A-F452-4680-A0A2-B1DB42D1C0DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B033B75A-F452-4680-A0A2-B1DB42D1C0DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B033B75A-F452-4680-A0A2-B1DB42D1C0DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B033B75A-F452-4680-A0A2-B1DB42D1C0DD} = {C1822CA3-2845-4D38-9BE5-FD68ADC4AE95}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9907175D-6173-4555-8C2F-3E979219714B}
