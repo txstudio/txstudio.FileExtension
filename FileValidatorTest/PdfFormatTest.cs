@@ -17,7 +17,7 @@ namespace FileValidatorTest
             
             bool _validResult;
 
-            _fullPath = @"../../../Files/github-txstudio-homepage.pdf";
+            _fullPath = this.GetFullPath(@"github-txstudio-homepage.pdf");
             
             _fileName = Path.GetFileName(_fullPath);
             _content = File.ReadAllBytes(_fullPath);
