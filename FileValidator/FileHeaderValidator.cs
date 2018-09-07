@@ -88,6 +88,7 @@ namespace FileValidator
             _config = new FileHeaderConfig();
             _config.Name = "doc";
             _config.Extensions = new string[] { "doc" };
+            _config.PrefixBytes = _prefixBytes;
 
             return _config;
         }
@@ -103,6 +104,7 @@ namespace FileValidator
             _config = new FileHeaderConfig();
             _config.Name = "png";
             _config.Extensions = new string[] { "png" };
+            _config.PrefixBytes = _prefixBytes;
 
             return _config;
         }
@@ -118,6 +120,7 @@ namespace FileValidator
             _config = new FileHeaderConfig();
             _config.Name = "pdf";
             _config.Extensions = new string[] { "pdf" };
+            _config.PrefixBytes = _prefixBytes;
 
             return _config;
         }
