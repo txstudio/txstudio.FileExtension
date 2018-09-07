@@ -9,7 +9,7 @@ namespace FileValidatorTest
     {
 
         [Fact]
-        public void RealPdfFileTest()
+        public void RealFileTest()
         {
             string _fullPath;
             string _fileName;
