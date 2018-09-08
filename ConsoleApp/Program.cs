@@ -1,6 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 using System.Collections.Generic;
-using FileValidator;
 using Newtonsoft.Json;
 
 namespace ConsoleApp
@@ -21,16 +22,27 @@ namespace ConsoleApp
 
             //var _json = JsonConvert.SerializeObject(_config, Formatting.Indented);
 
-            string _filePath = @"";
+            string _filePath = @"../../../github-txstudio-screenshot.gif";
             byte[] _content;
 
-            FileHeaderValidator _validator;
+            _content = File.ReadAllBytes(_filePath);
+            var _take = _content.Take(50);
 
-            _content = null;
+            Console.WriteLine(string.Join(",", _take));
+            Console.WriteLine();
 
-            _validator = new FileHeaderValidator();
-            _validator.ValidFormat(_filePath, _content);
-            
+
+
+            _filePath = @"../../../replacement.gif";
+
+            _content = File.ReadAllBytes(_filePath);
+            _take = _content.Take(50);
+
+            Console.WriteLine(string.Join(",", _take));
+            Console.WriteLine();
+
+
+            Console.WriteLine("press any to exit");
             Console.ReadKey();
         }
     }
