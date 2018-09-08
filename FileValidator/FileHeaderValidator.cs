@@ -176,7 +176,7 @@ namespace FileValidator
             List<byte[]> _prefixBytes;
 
             _prefixBytes = new List<byte[]>();
-            _prefixBytes.Add(new byte[] { 71, 73, 70, 56, 55, 97 });
+            _prefixBytes.Add(new byte[] { 71, 73, 70, 56 });
 
             _config = new FileHeaderConfig();
             _config.Name = "gif";
