@@ -70,6 +70,7 @@ namespace FileValidator
             {
                 _defaultConfig = new List<FileHeaderConfig>();
                 _defaultConfig.Add(GetDocConfig());
+                _defaultConfig.Add(GetDocxConfig());
                 _defaultConfig.Add(GetPngConfig());
                 _defaultConfig.Add(GetPdfConfig());
             }
