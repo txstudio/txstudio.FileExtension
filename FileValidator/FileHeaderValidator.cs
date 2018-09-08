@@ -69,17 +69,21 @@ namespace FileValidator
             if (_defaultConfig == null)
             {
                 _defaultConfig = new List<FileHeaderConfig>();
+
+                //document
                 _defaultConfig.Add(GetDocConfig());
                 _defaultConfig.Add(GetDocxConfig());
+                _defaultConfig.Add(GetPdfConfig());
 
+                //image
                 _defaultConfig.Add(GetPngConfig());
                 _defaultConfig.Add(GetJpgConfig());
-
-                _defaultConfig.Add(GetPdfConfig());
             }
 
             return _defaultConfig.ToArray();
         }
+
+        #region document
 
         private static FileHeaderConfig GetDocConfig()
         {
@@ -113,6 +117,26 @@ namespace FileValidator
             return _config;
         }
 
+        private static FileHeaderConfig GetPdfConfig()
+        {
+            FileHeaderConfig _config;
+            List<byte[]> _prefixBytes;
+
+            _prefixBytes = new List<byte[]>();
+            _prefixBytes.Add(new byte[] { 37, 80, 68, 70 });
+
+            _config = new FileHeaderConfig();
+            _config.Name = "pdf";
+            _config.Extensions = new string[] { "pdf" };
+            _config.PrefixBytes = _prefixBytes;
+
+            return _config;
+        }
+
+        #endregion
+
+        #region image
+
         private static FileHeaderConfig GetPngConfig()
         {
             FileHeaderConfig _config;
@@ -128,7 +152,7 @@ namespace FileValidator
 
             return _config;
         }
-        
+
         private static FileHeaderConfig GetJpgConfig()
         {
             FileHeaderConfig _config;
@@ -145,23 +169,7 @@ namespace FileValidator
             return _config;
         }
 
-        private static FileHeaderConfig GetPdfConfig()
-        {
-            FileHeaderConfig _config;
-            List<byte[]> _prefixBytes;
-            
-            _prefixBytes = new List<byte[]>();
-            _prefixBytes.Add(new byte[] { 37, 80, 68, 70 });
-
-            _config = new FileHeaderConfig();
-            _config.Name = "pdf";
-            _config.Extensions = new string[] { "pdf" };
-            _config.PrefixBytes = _prefixBytes;
-
-            return _config;
-        }
-
-
+        #endregion
 
     }
 
