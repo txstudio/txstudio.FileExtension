@@ -93,6 +93,22 @@ namespace FileValidator
             return _config;
         }
 
+        private static FileHeaderConfig GetDocxConfig()
+        {
+            FileHeaderConfig _config;
+            List<byte[]> _prefixBytes;
+
+            _prefixBytes = new List<byte[]>();
+            _prefixBytes.Add(new byte[] { 80, 75, 3, 4, 20, 0, 6, 0, 8, 0, 0, 0, 33, 0 });
+
+            _config = new FileHeaderConfig();
+            _config.Name = "docx";
+            _config.Extensions = new string[] { "docx" };
+            _config.PrefixBytes = _prefixBytes;
+
+            return _config;
+        }
+
         private static FileHeaderConfig GetPngConfig()
         {
             FileHeaderConfig _config;
