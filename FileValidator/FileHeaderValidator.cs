@@ -71,7 +71,10 @@ namespace FileValidator
                 _defaultConfig = new List<FileHeaderConfig>();
                 _defaultConfig.Add(GetDocConfig());
                 _defaultConfig.Add(GetDocxConfig());
+
                 _defaultConfig.Add(GetPngConfig());
+                _defaultConfig.Add(GetJpgConfig());
+
                 _defaultConfig.Add(GetPdfConfig());
             }
 
@@ -121,6 +124,22 @@ namespace FileValidator
             _config = new FileHeaderConfig();
             _config.Name = "png";
             _config.Extensions = new string[] { "png" };
+            _config.PrefixBytes = _prefixBytes;
+
+            return _config;
+        }
+        
+        private static FileHeaderConfig GetJpgConfig()
+        {
+            FileHeaderConfig _config;
+            List<byte[]> _prefixBytes;
+
+            _prefixBytes = new List<byte[]>();
+            _prefixBytes.Add(new byte[] { 255, 216, 255, 224 });
+
+            _config = new FileHeaderConfig();
+            _config.Name = "jpg";
+            _config.Extensions = new string[] { "jpg" };
             _config.PrefixBytes = _prefixBytes;
 
             return _config;
