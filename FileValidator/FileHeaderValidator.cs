@@ -78,6 +78,7 @@ namespace FileValidator
                 //image
                 _defaultConfig.Add(GetPngConfig());
                 _defaultConfig.Add(GetJpgConfig());
+                _defaultConfig.Add(GetGifConfig());
             }
 
             return _defaultConfig.ToArray();
@@ -168,7 +169,23 @@ namespace FileValidator
 
             return _config;
         }
+        
+        private static FileHeaderConfig GetGifConfig()
+        {
+            FileHeaderConfig _config;
+            List<byte[]> _prefixBytes;
 
+            _prefixBytes = new List<byte[]>();
+            _prefixBytes.Add(new byte[] { 71, 73, 70, 56, 55, 97 });
+
+            _config = new FileHeaderConfig();
+            _config.Name = "gif";
+            _config.Extensions = new string[] { "gif" };
+            _config.PrefixBytes = _prefixBytes;
+
+            return _config;
+        }
+        
         #endregion
 
     }
