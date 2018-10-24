@@ -74,6 +74,8 @@ namespace FileValidator
                 _defaultConfig.Add(GetDocConfig());
                 _defaultConfig.Add(GetDocxConfig());
                 _defaultConfig.Add(GetPdfConfig());
+                
+                //add xls, xlsx file format
 
                 //image
                 _defaultConfig.Add(GetPngConfig());
