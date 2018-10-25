@@ -120,6 +120,38 @@ namespace FileValidator
             return _config;
         }
 
+        private static FileHeaderConfig GetXlsConfig()
+        {
+            FileHeaderConfig _config;
+            List<byte[]> _prefixBytes;
+
+            _prefixBytes = new List<byte[]>();
+            _prefixBytes.Add(new byte[] { 208, 207, 17, 224, 161, 177, 26, 225 });
+
+            _config = new FileHeaderConfig();
+            _config.Name = "xls";
+            _config.Extensions = new string[] { "xls" };
+            _config.PrefixBytes = _prefixBytes;
+
+            return _config;
+        }
+
+        private static FileHeaderConfig GetXlsxConfig()
+        {
+            FileHeaderConfig _config;
+            List<byte[]> _prefixBytes;
+
+            _prefixBytes = new List<byte[]>();
+            _prefixBytes.Add(new byte[] { 80, 75, 3, 4, 20 });
+
+            _config = new FileHeaderConfig();
+            _config.Name = "xlsx";
+            _config.Extensions = new string[] { "xlsx" };
+            _config.PrefixBytes = _prefixBytes;
+
+            return _config;
+        }
+
         private static FileHeaderConfig GetPdfConfig()
         {
             FileHeaderConfig _config;
@@ -135,7 +167,7 @@ namespace FileValidator
 
             return _config;
         }
-
+        
         #endregion
 
         #region image
